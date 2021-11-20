@@ -10,9 +10,9 @@ const { join } = require("path");
 const database = new require("./database.js").db
 const colors = require('colors');
 /////////////////////////////////////////////////////
-
+console.log("OS:".brightYellow.bold +process.platform.brightYellow.bold)
 client.on("ready", ()=>{
-  console.log(("Logged in as " + client.user.tag).rainbow.bold.underline.bgGrey)
+  console.log(("Logged in as " + client.user.tag + " at:\n" + new Date(Date.now()).toString()).rainbow.bold.underline.bgBlack)
 })
 /////////////////////////////////////////////////////
 const comfolders = readdirSync(join(__dirname, "Commands")).filter((file) =>
@@ -47,8 +47,8 @@ for(var i = 0;i<files.length;i++){
     }
   }
 }
-console.clear()
-console.log("Commands Loading...".red.strikethrough.dim)
+//console.clear()
+//console.log("Commands Loading...".red.strikethrough.dim)
 console.log("Commands Loaded!".italic.underline.green.bold.bgBrightGreen)
 client.on("messageCreate", async message =>{
   if(message.author.bot)return;
