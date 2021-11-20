@@ -1,4 +1,3 @@
-require("colors")
 const Discord = require("discord.js")
 module.exports = {
   triggers: ["serverinfo", "server-info"],

@@ -1,4 +1,3 @@
-require("colors")
 const Discord = require("discord.js")
 module.exports = {
   triggers: ["avatar", "av"],
@@ -15,7 +14,7 @@ module.exports = {
     .setImage(img)
     .setAuthor(user.tag, img, img)
     .setThumbnail(img)
-    .setFooter(user.tag, img, img)
+    .setFooter(user.tag, img)
     message.channel.send({embeds: [embed]})
 
     async function resolveUser(message){

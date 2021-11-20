@@ -1,4 +1,3 @@
-const colors = require("colors")
 const Discord = require("discord.js")
 module.exports = {
   triggers: ["kick", "k"],

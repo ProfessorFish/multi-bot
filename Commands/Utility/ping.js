@@ -1,4 +1,3 @@
-require("colors")
 module.exports = {
   triggers: ["ping"],
   description: "Display the ping of the bot to Discord.",
