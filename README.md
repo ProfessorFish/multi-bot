@@ -16,5 +16,5 @@
 5) Run index.js
 
 
-Feel free to join the discord to view development: 
+Feel free to join the discord to view development on this bot, on my packages or to get support: 
 https://discord.gg/4nw27FgJ7B
