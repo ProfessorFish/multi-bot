@@ -7,8 +7,6 @@ module.exports = {
     const args = message.content.toLowerCase().split(" ")
     args.splice(0,1)
     let maths = args.join("")
-    console.log(3^3)
-    console.log(maths)
     try{
       function calc(fn) {
   return new Function('return ' + fn)();
