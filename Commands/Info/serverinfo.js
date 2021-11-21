@@ -18,9 +18,11 @@ module.exports = {
     let emojis = guild.emojis.cache.toJSON()
     let boosts = guild.premiumSubscriptionCount.toString()
     let boostLevel = guild.premiumTier
+    let owner = await guild.fetchOwner()
     const embed = new Discord.MessageEmbed()
     .setColor(config.embed_colour)
     .setAuthor(name, icon, icon)
+    .setTitle("Owner: " + owner.user.tag)
     .addField("Created At:",creationDate.toString())
     .addField("Members:",members)
     .setThumbnail(icon)
