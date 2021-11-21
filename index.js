@@ -47,9 +47,11 @@ for(var i = 0;i<files.length;i++){
     }
   }
 }
-//console.clear()
-//console.log("Commands Loading...".red.strikethrough.dim)
-console.log("Commands Loaded!".italic.underline.green.bold.bgBrightGreen)
+var count = 0
+files.forEach((data, index)=>{
+  count += data.files.length
+})
+console.log((client.commands.length + "/" + count + " Commands Loaded!").italic.underline.green.bold.bgBrightGreen)
 client.on("messageCreate", async message =>{
   if(message.author.bot)return;
   require("./Events/message.js").run(client, message, database, setup.public)
