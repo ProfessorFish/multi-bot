@@ -4,7 +4,7 @@ module.exports = {
   description: "Run code. (OWNER ONLY)",
   usage: "eval <code>",
   run: async function(client, message, db, config){
-    if(message.author.id != config.owner)return message.channel.send("Only the bot owner can run this command!")
+    if(config.owner.find(k=> k.id === message.author.id))return message.channel.send("Only the bot owner(s) can run this command!")
     const args = message.content.split(" ")
     if(args[0].includes(client.user.id)){
       args.splice(0, 2)

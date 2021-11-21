@@ -5,7 +5,7 @@ module.exports = {
   description: "Reboots the bot. (OWNER ONLY)",
   usage: "reboot",
   run: async function(client, message, db, config){
-    if(message.author.id != config.owner)return message.channel.send("Only the bot owner can run this command!")
+    if(config.owner.find(k=> k.id === message.author.id))return message.channel.send("Only the bot owner(s) can run this command!")
     try{
       var m = await message.channel.send("I'll see you on the other side :upside_down:")
       client.destroy()
