@@ -19,9 +19,7 @@
 
 7) Run cd YOUR_FILE_DIRECTORY_TO_FOLDER
 
-7) Run npm install
-
-8) Run npx node index.js
+8) Run npm start
 
 OR
 
