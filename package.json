@@ -1,0 +1,11 @@
+{
+    "devDependencies": {
+      "node": "^16.6.1"
+    },
+    "dependencies": {
+      "colors": "^1.4.0",
+      "discord.js": "^13.3.0",
+      "node-fetch": "^2.6.1"
+    }
+  }
+  
