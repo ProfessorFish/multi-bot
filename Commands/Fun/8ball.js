@@ -4,8 +4,13 @@ module.exports = {
   description: "Answers a question.",
   usage: "8ball <question>",
   run: async function(client, message, db, config){
-    const args = message.content.split(" ")
-    args.splice(0, 1)
+    const args = await message.content.split(" ")
+    if(args[0].includes(client.user.id)){
+      args.splice(0, 2)
+    } else{
+      args.splice(0, 1)
+    }
+    
     var responses = [//Add your own responses here if you want to!
     "Yes",
     "Absolutely",
