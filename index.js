@@ -51,7 +51,7 @@ var count = 0
 files.forEach((data, index)=>{
   count += data.files.length
 })
-console.log((client.commands.length + "/" + count + " Commands Loaded!").italic.underline.green.bold.bgBrightGreen)
+console.log((client.commands.length + "/" + count + " Commands Loaded!").italic.underline.green.bold.bgBlack)
 client.on("messageCreate", async message =>{
   if(message.author.bot)return;
   require("./Events/message.js").run(client, message, database, setup.public)
