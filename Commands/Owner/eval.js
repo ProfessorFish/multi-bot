@@ -7,7 +7,6 @@ module.exports = {
     if(message.author.id != config.owner)return message.channel.send("Only the bot owner can run this command!")
     const args = message.content.split(" ")
     args.splice(0, 1)
-    console.log(args)
     try{
     let value = eval(args.join(" "))
     const embed = new Discord.MessageEmbed()
