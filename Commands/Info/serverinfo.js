@@ -1,4 +1,5 @@
 const Discord = require("discord.js")
+const pretty = require("pretty-ms")
 module.exports = {
   triggers: ["serverinfo", "server-info"],
   description: "Display the information of the current server.",
@@ -23,7 +24,7 @@ module.exports = {
     .setColor(config.embed_colour)
     .setAuthor(name, icon, icon)
     .setTitle("Owner: " + owner.user.tag)
-    .addField("Created At:",creationDate.toString())
+    .addField("Created At:",creationDate.toString() + " **(" + pretty(Date.now()-guild.createdTimestamp) + " ago)**")
     .addField("Members:",members)
     .setThumbnail(icon)
     .addField("Boosts:", boosts + " *(" + boostLevel + ")*")
@@ -32,7 +33,7 @@ module.exports = {
     .addField("Channel Count:", channels.length.toString())
     .addField("Emoji Count:", emojis.length.toString())
     if(afkChannel)embed.addField("Afk Channel:",afkChannel.name)
-    if(afkTimeout)embed.addField("Afk Timeout:",afkTimeout + "s *(" + parseInt(afkTimeout)/60 + "m)*")
+    if(afkTimeout)embed.addField("Afk Timeout:",pretty(afkTimeout))
     if(banner)embed.setImage(banner)
     message.channel.send({embeds: [embed]})
   }
