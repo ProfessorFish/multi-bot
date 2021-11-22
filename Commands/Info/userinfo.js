@@ -14,7 +14,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
     .setColor(config.embed_colour)
     .setAuthor(user.user.tag, img, img)
-    .setDescription(`Account creation date: ${Date(user.user.createdTimestamp)} **(${pretty(Date.now() - user.user.createdTimestamp)} ago)**`)
+    .setDescription(`Account creation date: ${new Date(user.user.createdTimestamp)} **(${pretty(Date.now() - user.user.createdTimestamp)} ago)**`)
     .setThumbnail(img)
     .setFooter(user.id, img)
     message.channel.send({embeds: [embed]})
