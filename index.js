@@ -11,9 +11,6 @@ const database = new require("./database.js").db
 const colors = require('colors');
 /////////////////////////////////////////////////////
 console.log("OS:".brightYellow.bold +process.platform.brightYellow.bold)
-client.on("ready", ()=>{
-  console.log(("Logged in as " + client.user.tag + " at:\n" + new Date(Date.now()).toString()).rainbow.bold.underline.bgBlack)
-})
 /////////////////////////////////////////////////////
 const comfolders = readdirSync(join(__dirname, "Commands")).filter((file) =>
   !file.endsWith(".js")
@@ -54,5 +51,8 @@ files.forEach((data, index)=>{
 console.log((client.commands.length + "/" + count + " Commands Loaded!").italic.underline.green.bold.bgBlack)
 client.on("messageCreate", async message =>{
   if(message.author.bot)return;
-  require("./Events/message.js").run(client, message, database, setup.public)
+  require("./Events/Guild/message.js").run(client, message, database, setup.public)
+})
+client.on("ready", ()=>{
+  require("./Events/Client/ready.js").run(client)
 })
