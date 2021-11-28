@@ -16,7 +16,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
     .setColor(config.success_embed_colour)
     .setTitle("SUCCESS")
-    .setDescription("**RESULT:**\n" + "```js\n" + value + "```")
+    .setDescription("**TYPE:**\n```js\n" +typeof value+ "```\n**RESULT:**\n" + "```js\n" + value + "```")
     message.channel.send({embeds: [embed]})
     } catch(err){
       const embed = new Discord.MessageEmbed()
