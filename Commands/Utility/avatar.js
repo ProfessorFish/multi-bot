@@ -1,4 +1,3 @@
-require("colors")
 const Discord = require("discord.js")
 module.exports = {
   triggers: ["avatar", "av"],
@@ -7,7 +6,6 @@ module.exports = {
   run: async function(client, message, db, config){
     const args = message.content.split(" ")
     let user = await resolveUser(message)
-    console.log(user)
     if(!user)return message.channel.send("No way to identify user!")
     var img = user.displayAvatarURL({dynamic: true})
 
