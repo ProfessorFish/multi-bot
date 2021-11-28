@@ -12,12 +12,10 @@ module.exports = {
         .then(res => res.json())
         .then(json => {
           const deniedEmbed = new Discord.MessageEmbed()
-            .setColor(config.embed_colour)
-            .setAuthor(args0,
-              null)
-            .setTimestamp()
+            .setColor(config.fail_embed_colour)
+            .setAuthor(args0)
             .setTitle(`Could not find a defintion for ${args0}.`)
-          if (json.title) return message.channel.send({embeds: [deniedEmbed]})
+          if (json.title) return message.reply({embeds: [deniedEmbed]})
           var meaningsEnabler = 0
           var newmessage = ``
           var lengthOfJson = Object.keys(json[0].meanings).length
@@ -33,7 +31,7 @@ module.exports = {
             .setFooter(`Meaning of ${args0}`)
             .setTitle(json[0].phonetics[0].text)
             .setDescription(newmessage)
-          message.channel.send({embeds: [embed]});
+          message.reply({embeds: [embed]});
         })
   }
 }

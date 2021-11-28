@@ -12,7 +12,7 @@ module.exports = {
             .setColor(config.embed_colour)
             .setAuthor(json.author)
             .setTitle(json.quote)
-          message.channel.send({embeds: [embed]})
+          message.reply({embeds: [embed]})
         })
   }
 }

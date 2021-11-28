@@ -14,7 +14,7 @@ module.exports = {
     .setAuthor(json.title, json.preview[json.preview.length - 1],json.postLink)
     .setImage(json.preview[json.preview.length - 1])
     .setFooter(`Upvotes: ${json.ups} || Author: ${json.author} || Subreddit: ${json.subreddit}`)
-    message.channel.send({embeds: [embed]})
+    message.reply({embeds: [embed]})
     hasFound = true
       }
     })

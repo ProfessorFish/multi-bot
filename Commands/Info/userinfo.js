@@ -8,7 +8,7 @@ module.exports = {
   run: async function(client, message, db, config){
     const args = message.content.split(" ")
     let user = await resolveUser(message)
-    if(!user)return message.channel.send("No way to identify user!")
+    if(!user)return message.reply("No way to identify user!")
     var img = user.displayAvatarURL({dynamic: true})
 
     const embed = new Discord.MessageEmbed()
@@ -17,7 +17,7 @@ module.exports = {
     .setDescription(`Account creation date: ${new Date(user.user.createdTimestamp)} **(${pretty(Date.now() - user.user.createdTimestamp)} ago)**`)
     .setThumbnail(img)
     .setFooter(user.id, img)
-    message.channel.send({embeds: [embed]})
+    message.reply({embeds: [embed]})
 
     async function resolveUser(message){
       if(message.mentions.members.first() && !args[0].includes(client.user.id)){

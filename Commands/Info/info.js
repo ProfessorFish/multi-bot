@@ -11,7 +11,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
     .setColor(config.embed_colour)
     .setTitle("Pinging...")
-    var m = await message.channel.send({embeds: [embed]})
+    var m = await message.reply({embeds: [embed]})
     const embed2 = new Discord.MessageEmbed()
     .setColor(config.embed_colour)
     .setThumbnail(client.user.displayAvatarURL({dynamic: true}))

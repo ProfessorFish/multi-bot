@@ -16,9 +16,9 @@ module.exports = {
       .setColor(config.success_embed_colour)
       .setTitle(answer.toString())
       .setFooter("Powers may not work")
-      message.channel.send({embeds: [embed]})
+      message.reply({embeds: [embed]})
     } catch(err){
-      message.channel.send("Maths went wrong!\n\n" + err)
+      message.reply("Maths went wrong!\n\n" + err)
     }
   }
 }

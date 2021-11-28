@@ -12,8 +12,8 @@ module.exports = {
     let rock = ["rock", "rocks", "r"]
     let scissors = ["scissor", "scissors", "s"]
     let paper = ["paper", "papers", "p"]
-    if(!args[1])return message.channel.send("Please provide a valid choice!")
-    if(!valid.find(k=> k === args[1]))return message.channel.send("Invalid choice! Must be one of: " + valid.join(", "))
+    if(!args[1])return message.reply("Please provide a valid choice!")
+    if(!valid.find(k=> k === args[1]))return message.reply("Invalid choice! Must be one of: " + valid.join(", "))
     let mine = choices[Math.floor(Math.random() * choices.length)]
     if(rock.find(k=> k === args[1])){
       if(mine === "paper"){
@@ -46,7 +46,7 @@ module.exports = {
       .setTitle("You lose!")
       .setDescription("I picked " + mp + ", you picked " + tp + " meaning I win!")
       .setFooter("This is pure random, I am not biased or rigged in any way")
-      message.channel.send({embeds: [embed]})
+      message.reply({embeds: [embed]})
     }
     function theyWin(mp, tp){
       const embed = new Discord.MessageEmbed()
@@ -54,7 +54,7 @@ module.exports = {
       .setTitle("You Win!")
       .setDescription("I picked " + mp + ", you picked " + tp + " meaning you win!")
       .setFooter("This is pure random, I am not biased or rigged in any way")
-      message.channel.send({embeds: [embed]})
+      message.reply({embeds: [embed]})
     }
     function tie(mp, tp){
       const embed = new Discord.MessageEmbed()
@@ -62,7 +62,7 @@ module.exports = {
       .setTitle("Its a tie!")
       .setDescription("I picked " + mp + ", you picked " + tp + " meaning we tie!")
       .setFooter("This is pure random, I am not biased or rigged in any way")
-      message.channel.send({embeds: [embed]})
+      message.reply({embeds: [embed]})
     }
   }
 }

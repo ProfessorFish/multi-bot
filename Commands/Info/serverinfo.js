@@ -35,6 +35,6 @@ module.exports = {
     if(afkChannel)embed.addField("Afk Channel:",afkChannel.name)
     if(afkTimeout)embed.addField("Afk Timeout:",pretty(afkTimeout))
     if(banner)embed.setImage(banner)
-    message.channel.send({embeds: [embed]})
+    message.reply({embeds: [embed]})
   }
 }

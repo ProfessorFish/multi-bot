@@ -16,7 +16,7 @@ module.exports = {
       var animalImageUrlr = animalImage.find(k=>k.animal === args[1])
       var animalFactUrlr = animalFact.find(k=>k.animal === args[1])
       if(!animalFactUrlr || !animalImageUrlr){
-      message.channel.send(`Invalid animal!\nDOG\nCAT\nPANDA\nBIRD\nFOX\nKOALA`)
+      message.reply(`Invalid animal!\nDOG\nCAT\nPANDA\nBIRD\nFOX\nKOALA`)
       return null;
       }
       var animalFactUrl = animalFactUrlr.api
@@ -32,6 +32,6 @@ module.exports = {
     .setColor(config.embed_colour)
     .setTitle(animalFacte)
     .setImage(animalImagee)
-    message.channel.send({embeds: [embed]})
+    message.reply({embeds: [embed]})
   }
 }

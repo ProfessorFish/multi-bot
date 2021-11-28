@@ -26,7 +26,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
     .setColor(config.embed_colour)
     .setTitle("Contacting the Oracle")
-    var m = await message.channel.send({embeds: [embed]})
+    var m = await message.reply({embeds: [embed]})
     setTimeout(async function(){
       const embed2 = new Discord.MessageEmbed()
       .setColor(config.embed_colour)

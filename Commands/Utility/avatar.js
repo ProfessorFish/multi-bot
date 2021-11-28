@@ -5,7 +5,7 @@ module.exports = {
   usage: "avatar [@user || userID]",
   run: async function(client, message, db, config, args){
     let user = await resolveUser(message)
-    if(!user)return message.channel.send("No way to identify user!")
+    if(!user)return message.reply("No way to identify user!")
     var img = user.displayAvatarURL({dynamic: true})
 
     const embed = new Discord.MessageEmbed()
@@ -14,7 +14,7 @@ module.exports = {
     .setAuthor(user.tag, img, img)
     .setThumbnail(img)
     .setFooter(user.tag, img)
-    message.channel.send({embeds: [embed]})
+    message.reply({embeds: [embed]})
 
     async function resolveUser(message){
       if(message.mentions.users.first() && !args[0].includes(client.user.id)){
