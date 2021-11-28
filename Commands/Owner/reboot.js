@@ -10,7 +10,7 @@ module.exports = {
       var m = await message.channel.send("I'll see you on the other side :upside_down:")
       client.destroy()
     } catch(err){
-      message.channel.send("Could not destroy client!\nThrowing error to crash bot instead!")
+      message.channel.send("Could not destroy client!")
     }
     await client.login(config.token)
     message.channel.send("I'm back! Did you miss me?")
