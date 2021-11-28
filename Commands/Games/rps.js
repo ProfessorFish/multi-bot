@@ -3,8 +3,10 @@ module.exports = {
   triggers: ["rps", "rockpaperscissors", "rock-paper-scissors"],
   description: "Play a game of rock paper scissors against the bot!",
   usage: "rps",
-  run: async function(client, message, db, config){
-    const args = message.content.toLowerCase().split(" ")
+  run: async function(client, message, db, config, args){
+    args = args.join(" ")
+    args = args.toLowerCase()
+    args = args.split(" ")
     let choices = ["rock", "paper", "scissors"]
     let valid = ["rock", "paper"," scissors", "r", "p", "s","scissor", "rocks", "papers"]
     let rock = ["rock", "rocks", "r"]
